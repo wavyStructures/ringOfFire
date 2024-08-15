@@ -1,23 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule } from '@angular/material/dialog'; // Import MatDialog
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-add-player',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatDialogModule, MatInputModule, FormsModule],
   templateUrl: './dialog-add-player.component.html',
-  styleUrl: './dialog-add-player.component.scss'
+  styleUrls: ['./dialog-add-player.component.scss']
 })
-export class DialogAddPlayerComponent {
-
+export class DialogAddPlayerComponent implements OnInit {
   name: string = '';
 
-  onNoClick(){}
+  constructor(public dialogRef: MatDialogRef<DialogAddPlayerComponent>) { }
+
+  ngOnInit(): void {
+  }
+
+  onNoClick() {
+    this.dialogRef.close();
+  }
 
 }
