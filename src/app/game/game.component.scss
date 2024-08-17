@@ -58,3 +58,16 @@
         border-radius: 50% !important;
         background-color: orange;
     }
+
+    .info-card {
+        position: absolute;
+        bottom: 32px;
+        left: 100px;
+        right: 100px;
+        border-radius: 16px;
+    }
+
+    ::ng-deep .card-title {
+        padding: 5px 12px;
+        background-color: orange;
+    }
